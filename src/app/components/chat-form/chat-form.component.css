@@ -1,0 +1,89 @@
+.chatOS_body {
+    background-color: #fff;
+    padding: 15px;
+    /* border-radius: 10px; */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    height: 23vh;
+}
+
+.chatOS {
+    /* position: fixed; */
+    right: 10vh;
+    bottom: 70px;
+    width: 400px;
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    display: block;
+    box-shadow: 1px 1px 100px 2px rgba(0, 0, 0, 0.22);
+    border-radius: 10px;
+    -webkit-transition: all .2s ease-out;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+
+#chatOS_header {
+    background-color: #084483;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.inputChatOS_category {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.buttonSendInfo {
+    background-color: #084483;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* .buttonSendInfo:hover {
+    background-color: #063f72;
+} */
+
+.fabOSs {
+    right: 50px;
+    bottom: 85px;
+    position: fixed;
+    /* margin: 1em; */
+    /* z-index: 100000000; */
+}
+
+
+
+.chatOS_converse {
+    margin-top: 0px;
+}
+
+.buttonMinWin,
+.buttonCloseWin {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.chatOs_close_message_btn mat-icon {
+    font-size: 20px;
+    color: #090101;
+    border-radius: 50%;
+    position: relative;
+    top: 5px;
+}

@@ -1,0 +1,96 @@
+<div id='formularioInicial' style='display:none'>0</div>
+<div id='idFabOSs' class='fabOSs'>
+    <!-- <app-mensaje-flotante></app-mensaje-flotante> -->
+    <div #panelContentOS id="panelContentOS" class="chatOS" [ngClass]="{'is-visible': isVisible}">
+        <div id="chatOS_header" class="chatOS_header">
+            <!-- <button id="MinWin" class="buttonMinWin" (click)="toggleFabOS()" title="Minimizar Ventana">&mdash;</button> -->
+            <button id="CloseWin" class="buttonCloseWin" (click)="closeWindow()" title="Cerrar Interacción">✕</button>
+        </div>
+        <div id='chatOS_form' class='chatOS_body'>
+            <div class='chatOS_category chatOS_form'>
+                <div class='message_form'>
+                    <div class='container'>
+                        <div class='row'>
+                            <!-- Título Header-->
+                            <div class='inputChatOS_category col-md-10 col-sm-10 col-9' style="display: flex;">
+                                <!-- Imagen -->
+                                <div class='col-md-2 col-sm-2 col-2'
+                                    style='width:50px; padding-right:0px; padding-left:0px'>
+                                    <img src='assets/logo.jpg' style='width: 56px;'>
+                                </div>
+                                <a
+                                    style='text-decoration: none; color: #084483; font-size:16px; font-family: Nunito, sans-serif; font-weight: 500; text-align: center; display: block; position: relative; top: 20px; left: 15px;'>
+                                    <b> Bienvenido al Chat virtual Demo</b>
+                                </a>
+                            </div>
+                        </div>
+                        <div style="padding-top: 5px;"></div>
+                        <!-- Términos y Condiciones -->
+                        <div id="terminosSuperior">
+                            <a style='text-decoration: none; color: #595E62; font-size:13px'> Tus datos serán tratados
+                                conforme
+                                a las disposiciones establecidas en la ley 1581 de 2012,</a>
+                            <a style='text-decoration: none; color: #0d27cf; font-size:13px'
+                                href='https://agenciaatenea.gov.co/sites/default/files/2023-10/gti-pl-02_politica_de_tratamiento_de_datos.pdf'
+                                target='_blank'>Política de Privacidad y Tratamiento de Datos Personales,</a>
+                            <a style='text-decoration: none; color: #595E62; font-size:13px'>¿Nos autorizas a dar
+                                tratamiento a
+                                tus datos con fines misionales de nuestra entidad?</a>
+                            <br />
+                            <input type='checkbox' id='ChatOS_Habeas_Data' name='HabeasData'
+                                style='max-width: 15px; width: 100%; height: 15px;' />
+                            <a style='text-decoration: none; color: #595E62; font-size:13px'> Acepto la Política de
+                                Tratamiento
+                                de Datos </a>
+                        </div>
+                        <br />
+                        <!-- Campos del formulario -->
+                        <label>Tipo de documento: *</label>
+                        <select id='ChatOS_Tipo_Documento' style='margin-block-end: 10px; width: 101.5%;'
+                            class='inputChatOS_category' name='DocumentoId'>
+                            <option value='0'> Selecciona una opción</option>
+                            <option value='5390'> Cédula de Ciudadanía</option>
+                            <option value='102500'> Cédula de Extranjería</option>
+                            <option value='105488'> Tarjeta Identidad</option>
+                            <option value='105490'> Pasaporte</option>
+                            <option value='105493'> Permiso Especial de Permanencia</option>
+                            <option value='106813'> Anónimo</option>
+                            <option value='106814'> NUIP</option>
+                            <option value='102501'> NIT</option>
+                        </select>
+                        <br />
+                        <label>Número de documento: *</label>
+                        <input type='text' id='ChatOS_Numero_Documento' style='margin-block-end: 10px;' name='Cedula'
+                            class='inputText inputChatOS_category' placeholder='Escribe tu número de documento'
+                            maxlength='12' />
+                        <label>Nombre completo: *</label>
+                        <input type='text' id='ChatOS_Nombre' style='margin-block-end: 10px;' name='Nombre'
+                            class='inputText inputChatOS_category' placeholder='Escribe tu nombre completo'
+                            maxlength='50' />
+                        <br />
+                        <label>Correo electrónico: *</label>
+                        <input type='email' id='ChatOS_Correo' style='margin-block-end: 10px;' name='Correo'
+                            class='inputText inputChatOS_category' placeholder='Escribe un correo electrónico'
+                            maxlength='50' />
+                        <br />
+                        <label>Celular: *</label>
+                        <input type='text' id='ChatOS_Telefono' style='margin-block-end: 10px;' name='Celular'
+                            class='inputText inputChatOS_category' placeholder='Ingresa un número celular de 10 dígitos'
+                            maxlength='10' />
+                        <br />
+                    </div>
+                    <div style='width:100%; text-align:center; margin-top: 8px'>
+                        <button id='enviarDataBoton' class='buttonSendInfo'><b>ENVIAR</b></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id='ChatOS_Terminos' class='chatOS_converse chatOS_body chatOS_login'></div>
+        <a id='chatOS_first_screen' class='fabOS'><i class='zmdi zmdi-arrow-right'></i></a>
+        <div id='chatOS_converse' class='chatOS_conversion chatOS_converse'></div>
+
+        <div id='chatOS_body' class='chatOS_body'>
+            <div id='poll_OS'></div>
+        </div>
+    </div>
+</div>

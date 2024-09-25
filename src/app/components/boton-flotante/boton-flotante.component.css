@@ -1,0 +1,140 @@
+/* .inputChatOS_category {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.buttonSendInfo {
+    background-color: #084483;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttonSendInfo:hover {
+    background-color: #063f72;
+}
+
+.fabOSs {
+    right: 10px;
+    bottom: 85px;
+    position: fixed;
+    margin: 1em;
+    z-index: 100000000;
+}
+
+.message_avatar {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    border-radius: 50px;
+    background-color: whitesmoke;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    animation: jump 3s alternate infinite ease;
+}
+
+.chatOs_close_message_btn mat-icon {
+    font-size: 20px;
+    color: #090101;
+    border-radius: 50%;
+    position: relative;
+    top: 5px;
+}
+
+.messageOut {
+    background-color: whitesmoke;
+    padding: 10px 15px;
+    border-radius: 50px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: #595e62;
+}
+
+
+
+.buttonMinWin,
+.buttonCloseWin {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.fabOS {
+    background-color: #084483;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+
+
+
+
+#poll_OS {
+    padding: 10px;
+}
+
+.chatOS_body {
+    padding: 15px;
+}
+
+.chatOS_converse {
+    margin-top: 10px;
+}
+
+.chatOS_login p,
+.chatOS_body li,
+.chatOS_body p,
+.chatOS_body a {
+    -webkit-animation: zoomIn .5s cubic-bezier(.42, 0, .58, 1);
+    animation: zoomIn .5s cubic-bezier(.42, 0, .58, 1);
+}
+
+.fabOSs .chatOS_msg_item_outChat {
+    margin-left: 10px;
+    cursor: pointer;
+} */
+
+#primeOS {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.iconImgExterior {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+}
+
+.fabOS {
+    background-color: transparent;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
