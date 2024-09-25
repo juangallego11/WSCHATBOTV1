@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent {
+  isVisible = true;
 
+  show(): void {
+    this.isVisible = true;
+  }
+
+  hide(): void {
+    this.isVisible = false;
+  }
 }

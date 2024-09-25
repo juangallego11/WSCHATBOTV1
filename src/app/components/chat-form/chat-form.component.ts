@@ -1,4 +1,6 @@
-import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, inject, Renderer2, ViewChild } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-chat-form',
@@ -22,47 +24,35 @@ export class ChatFormComponent {
   @ViewChild('recButtonOS') recButtonOS!: ElementRef;
   @ViewChild('btnAttachmentOS') btnAttachmentOS!: ElementRef;
   @ViewChild('divFabOs') divFabOs!: ElementRef;
+  isModalVisible: boolean = false;
 
   constructor(private renderer: Renderer2) { }
 
-  /*  toggleFabOS(): void {
-     // Alternar la visibilidad del formulario y el mensaje de bienvenida
-     this.isActive = !this.isActive;
-     this.isVisible = !this.isVisible;
- 
-     const panelContentOS = this.panelContentOS.nativeElement;
-     const primeOS = this.primeOS.nativeElement;
-     const messageOut = this.containerMessageOut.nativeElement;
- 
-     // Mostrar u ocultar el panel de contenido (formulario)
-     if (this.isVisible) {
-       this.renderer.setStyle(panelContentOS, 'display', 'block');
-       this.renderer.setStyle(messageOut, 'display', 'none'); // Ocultar mensaje
-     } else {
-       this.renderer.setStyle(panelContentOS, 'display', 'none');
-       this.renderer.setStyle(messageOut, 'display', 'block'); // Mostrar mensaje si se oculta el formulario
-     }
-     
-         // Alternar las clases del botón primeOS
-         this.toggleClass(primeOS, 'is-active');
-         this.toggleClass(primeOS, 'is-float');
-         this.toggleClass(primeOS, 'is-visible');
- 
-     // Scroll hacia el final
-     setTimeout(() => {
-       if (primeOS) {
-         primeOS.scrollTop = primeOS.scrollHeight;
-       }
-     }, 0);
-     this.hideChatOS(2);
-   } */
-
-
+  readonly dialog = inject(MatDialog);
+  private dialogRef: MatDialogRef<ModalComponent> | null = null;
 
   closeWindow(): void {
     //this.toggleFabOS();
     window.location.reload();
   }
+
+  /* minWindow(): void {
+    if (!this.dialogRef) {
+      // Si el modal aún no se ha creado, lo creamos
+      this.dialogRef = this.dialog.open(ModalComponent, {
+        disableClose: true // Esto evita que el modal se cierre al hacer clic fuera de él
+      });
+    }
+
+    // Alternamos la visibilidad
+    this.isModalVisible = !this.isModalVisible;
+
+    if (this.isModalVisible) {
+      this.dialogRef.componentInstance.show();
+    } else {
+      this.dialogRef.componentInstance.hide();
+    }
+  } */
 
 
   hideChatOS(hide: number): void {
@@ -71,9 +61,6 @@ export class ChatFormComponent {
         this.toggleDisplay(this.chatOSConverse.nativeElement, 'none');
         this.toggleDisplay(this.chatOSBody.nativeElement, 'none');
         this.toggleDisplay(this.chatOSForm.nativeElement, 'block');
-        //this.toggleDisplay(this.chatOSTerminos.nativeElement, 'none');
-        //this.setElementVisibility(this.chatOSSend.nativeElement, true);
-        //this.setElementVisibility(this.btnAttachmentOS.nativeElement, true);
         this.renderer.setStyle(this.divFabOs.nativeElement, 'height', '0px');
         break;
 
@@ -81,9 +68,6 @@ export class ChatFormComponent {
         this.toggleDisplay(this.chatOSConverse.nativeElement, 'block');
         this.toggleDisplay(this.chatOSBody.nativeElement, 'none');
         this.toggleDisplay(this.chatOSForm.nativeElement, 'none');
-        //this.toggleDisplay(this.chatOSTerminos.nativeElement, 'none');
-        //this.setElementVisibility(this.chatOSSend.nativeElement, false);
-        //this.setElementVisibility(this.btnAttachmentOS.nativeElement, false);
         this.renderer.setStyle(this.divFabOs.nativeElement, 'height', '');
         break;
 
@@ -92,8 +76,6 @@ export class ChatFormComponent {
         this.toggleDisplay(this.chatOSBody.nativeElement, 'block');
         this.toggleDisplay(this.chatOSForm.nativeElement, 'none');
         this.toggleDisplay(this.chatOSTerminos.nativeElement, 'none');
-        this.setElementVisibility(this.chatOSSend.nativeElement, true);
-        this.setElementVisibility(this.btnAttachmentOS.nativeElement, true);
         // Lógica adicional que necesites agregar
         break;
 
@@ -102,7 +84,6 @@ export class ChatFormComponent {
         this.toggleDisplay(this.chatOSBody.nativeElement, 'none');
         this.toggleDisplay(this.chatOSForm.nativeElement, 'none');
         this.toggleDisplay(this.chatOSTerminos.nativeElement, 'block');
-        this.setElementVisibility(this.chatOSSend.nativeElement, true);
         break;
     }
   }
@@ -114,5 +95,4 @@ export class ChatFormComponent {
   setElementVisibility(element: HTMLElement, hidden: boolean): void {
     this.renderer.setStyle(element, 'visibility', hidden ? 'hidden' : 'visible');
   }
-  // Add other methods as needed (e.g., guardarCliente, SendFormOS, updateDocument)
 }

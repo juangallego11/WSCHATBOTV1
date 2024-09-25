@@ -12,10 +12,6 @@ export class MensajeFlotanteComponent {
   @ViewChild('containerMessageOut') containerMessageOut!: ElementRef;
   constructor(private renderer: Renderer2) { }
 
-  /*  btnCloseWelcomeMessage(): void {
-     this.showMessage = false;
-   } */
-
   private toggleClass(element: HTMLElement, className: string): void {
     if (element.classList.contains(className)) {
       this.renderer.removeClass(element, className);
